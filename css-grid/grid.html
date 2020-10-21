@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Demo</title>
+    <style>
+        body {
+            background-color: #6e7175;
+        }
+        
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #353535;
+            font-size: 3rem;
+            color: #fff;
+            box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+            height: 100%;
+            width: 100%;
+            border-radius: 4px;
+            transition: all 500ms;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .card:hover {
+            box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+            transform: translateY(-3px) scale(1.05);
+            cursor: pointer;
+        }
+        
+        .mainGrid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(12vw, 1fr));
+            grid-template-rows: repeat(3, minmax(12vw, 1fr));
+            gap: 10px;
+            margin: 80px;
+        }
+        
+        .mainGrid .grid-item:nth-child(3) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="mainGrid">
+        <div class="grid-item card">1</div>
+        <div class="grid-item card">2</div>
+        <div class="grid-item card">3</div>
+        <div class="grid-item card">4</div>
+        <div class="grid-item card">5</div>
+        <div class="grid-item card">6</div>
+        <div class="grid-item card">7</div>
+        <div class="grid-item card">8</div>
+        <div class="grid-item card">9</div>
+    </section>
+</body>
+
+</html>

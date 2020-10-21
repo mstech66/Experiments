@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathe</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #FEFEFA;
+            user-select: none;
+        }
+
+        .main-grid {
+            display: flex;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+        .flower {
+            width: 125px;
+            height: 125px;
+            margin:auto;
+            animation: pulse 4s cubic-bezier(0.5, 0, 0.5, 1) alternate infinite;
+        }
+
+        .circle {
+            background-color: #00c853;
+            opacity: 0.4;
+            border-radius: 50%;
+            height: 125px;
+            position: absolute;
+            transform: translate(0, 0);
+            width: 125px;
+        }
+
+        .circle:nth-child(1) {
+            animation: circle-1 4s ease alternate infinite;
+        }
+
+        .circle:nth-child(2) {
+            animation: circle-2 4s ease alternate infinite;
+        }
+
+        .circle:nth-child(3) {
+            animation: circle-3 4s ease alternate infinite;
+        }
+
+        .circle:nth-child(4) {
+            animation: circle-4 4s ease alternate infinite;
+        }
+
+        .circle:nth-child(5) {
+            animation: circle-5 4s ease alternate infinite;
+        }
+
+        .circle:nth-child(6) {
+            animation: circle-6 4s ease alternate infinite;
+        }
+
+        @keyframes circle-1 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(-35px, -50px);
+            }
+        }
+
+        @keyframes circle-2 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(35px, 50px);
+            }
+        }
+
+        @keyframes circle-3 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(-60px, 0);
+            }
+        }
+
+        @keyframes circle-4 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(60px, 0);
+            }
+        }
+
+        @keyframes circle-5 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(-35px, 50px);
+            }
+        }
+
+        @keyframes circle-6 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(35px, -50px);
+            }
+        }
+
+        .circle:nth-child(odd) {
+            background: #61bea2;
+        }
+
+        .circle:nth-child(even) {
+            background: #529ca0;
+        }
+
+        .circle:nth-child(1) {
+            transform: translate(-35px, -50px);
+        }
+
+        .circle:nth-child(2) {
+            transform: translate(35px, -50px);
+        }
+
+        .circle:nth-child(3) {
+            transform: translate(-60px, 0);
+        }
+
+        .circle:nth-child(4) {
+            transform: translate(60px, 0);
+        }
+
+        .circle:nth-child(5) {
+            transform: translate(-35px, 50px);
+        }
+
+        .circle:nth-child(6) {
+            transform: translate(35px, 50px);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.15) rotate(180deg);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-grid">
+        <div class="flower">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+</body>
+
+</html>

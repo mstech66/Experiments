@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            display: grid;
+            place-items: center;
+        }
+        
+        .skills-grid {
+            width: 600px;
+            height: 600px;
+            margin: 20px;
+            display: grid;
+            grid-template: repeat(12, 1fr) / repeat(12, 1fr);
+            grid-gap: 8px;
+        }
+        
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            font-size: 1.6rem;
+            color: #fff;
+            box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+            height: 100%;
+            width: 100%;
+            border-radius: 8px;
+            transition: all 500ms;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .card:hover {
+            box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+            transform: translateY(-3px) scale(1.1);
+            cursor: pointer;
+        }
+        
+        .tile1 {
+            grid-row: 5/3;
+            grid-column: 8/6;
+        }
+        
+        .tile2 {
+            grid-row: 7/5;
+            grid-column: 8/6;
+        }
+        
+        .tile3 {
+            grid-row: 9/7;
+            grid-column: 8/6;
+        }
+        
+        .tile4 {
+            grid-row: 11/9;
+            grid-column: 8/6;
+        }
+        
+        .tile5 {
+            grid-row: 6/4;
+            grid-column: 10/8;
+        }
+        
+        .tile6 {
+            grid-row: 8/6;
+            grid-column: 10/8;
+        }
+        
+        .tile7 {
+            grid-row: 8/6;
+            grid-column: 6/4;
+        }
+        
+        .tile8 {
+            grid-row: 10/8;
+            grid-column: 6/4;
+        }
+        
+        .tile9 {
+            grid-row: 7/5;
+            grid-column: 12/10;
+        }
+        
+        .tile10 {
+            grid-row: 9/7;
+            grid-column: 4/2;
+        }
+        
+        .tile11 {
+            grid-row: 6/3;
+            grid-column: 6/3;
+        }
+        
+        .tile12 {
+            grid-row: 11/8;
+            grid-column: 11/8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="skills-grid">
+        <div class="card tile1">Tile 1</div>
+        <div class="card tile2">Tile 2</div>
+        <div class="card tile3">Tile 3</div>
+        <div class="card tile4">Tile 4</div>
+        <div class="card tile5">Tile 5</div>
+        <div class="card tile6">Tile 6</div>
+        <div class="card tile7">Tile 7</div>
+        <div class="card tile8">Tile 8</div>
+        <div class="card tile9">Tile 9</div>
+        <div class="card tile10">Tile 10</div>
+        <div class="card tile11">Tile 11</div>
+        <div class="card tile12">Tile 12</div>
+    </div>
+
+</body>
+
+</html>

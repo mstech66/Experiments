@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Demo</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #27292D;
+        }
+        
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #353535;
+            font-size: 3rem;
+            color: #fff;
+            box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+            height: 100%;
+            width: 100%;
+            border-radius: 4px;
+            transition: all 500ms;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .grid-container {
+            height: 90vh;
+            margin: 8px;
+            display: grid;
+            grid-template: repeat(6, 1fr) / repeat(12, 1fr);
+            gap: 8px;
+        }
+        
+        .grid-container .header {
+            grid-column: 13/1;
+            grid-row: 3/1;
+        }
+        
+        .grid-container .navbar {
+            grid-column: 3/1;
+            grid-row: 7/3;
+        }
+        
+        .grid-container .meta {
+            grid-column: 13/10;
+            grid-row: 4/3;
+        }
+        
+        .grid-container .content {
+            grid-column: 13/3;
+            grid-row: 6/3;
+        }
+        
+        .grid-container .footer {
+            grid-column: 13/3;
+            grid-row: 7/6;
+        }
+    </style>
+</head>
+<section class="grid-container">
+    <div class="grid-item card header">Header</div>
+    <div class="grid-item card navbar">Navbar</div>
+    <div class="grid-item card content">Content</div>
+    <div class="grid-item card meta">Meta</div>
+    <div class="grid-item card footer">Footer</div>
+</section>
+
+<body>
+
+</body>
+
+</html>

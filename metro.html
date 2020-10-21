@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .main-grid {
+            display: grid;
+            height: 100vh;
+            place-items: center;
+        }
+
+        .tile {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            perspective: 1000px;
+        }
+
+        .tile-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.4s;
+            transform-style: preserve-3d;
+        }
+
+        .tile-front,
+        .tile-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: grid;
+            place-items: center;
+        }
+
+        .tile-back {
+            transform: rotateX(180deg);
+            background-color: gray;
+        }
+
+        .tile-front {
+            background-color: #3ddc84;
+        }
+
+        .tile .tile-inner {
+            animation: flip 2s infinite alternate-reverse;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes flip {
+            0% {
+                transform: rotateX(0deg);
+            }
+
+            40% {
+                transform: rotateX(0deg);
+            }
+
+            60% {
+                transform: rotateX(179deg);
+            }
+
+            100% {
+                transform: rotateX(180deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-grid">
+        <div class="tile">
+            <div class="tile-inner">
+                <div class="tile-front">
+                    <img src="https://picsum.photos/200/200" alt="">
+                </div>
+                <div class="tile-back">
+                    <img src="https://picsum.photos/id/1058/200/200" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
