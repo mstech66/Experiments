@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            var localStorageVal = localStorage.getItem('followVal');
+            if(localStorageVal != null){
+                $('#followBtn').text(localStorageVal);
+            }
+            $('#followBtn').click(()=>{
+                var followVal = localStorage.getItem('followVal');
+                if(followVal == 'Follow' || followVal == null){
+                    $('#followBtn').text('Following');
+                    localStorage.setItem('followVal', 'Following')
+                }
+                else {
+                    $('#followBtn').text('Follow');
+                    localStorage.setItem('followVal', 'Follow')
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p>Whom to Follow</p>
+    <button id="followBtn">Follow</button>
+</body>
+
+</html>

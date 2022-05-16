@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Map Like Scrolling</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        cursor: move;
+      }
+      div {
+        height: 1000px;
+        width: 2000px;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(9, 9, 121, 1) 35%,
+          rgba(0, 212, 255, 1) 100%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div>Start.....</div>
+    <div>End.......</div>
+    <script>
+      //jQuery to the rescue
+      $.dragScroll = function () {
+        var settings = $.extend({
+          scrollVertical: true,
+          scrollHorizontal: true,
+        });
+
+        var clicked = false,
+          clickY,
+          clickX;
+
+        //fn that takes event and element as arguments
+        var updateScrollPos = function (e, el) {
+          var $el = $(el);
+          //scrollTop returns vertical scrollBar position where scrollLeft for horiz scrollBar position
+          //pageY and pageX returns the mouse co-ordinates when button is clicked on page
+          //clickY and clickX are previously stored location where the page is currently at
+          settings.scrollVertical &&
+            $el.scrollTop($el.scrollTop() + (clickY - e.pageY));
+          settings.scrollHorizontal &&
+            $el.scrollLeft($el.scrollLeft() + (clickX - e.pageX));
+        };
+
+        $(document).on({
+          mousemove: function (e) {
+            clicked && updateScrollPos(e, this);
+          },
+          mousedown: function (e) {
+            clicked = true;
+            //storing the current point value to click vars
+            clickY = e.pageY;
+            clickX = e.pageX;
+          },
+          mouseup: function () {
+            //setting click as false when mouse click is lifted
+            clicked = false;
+          },
+        });
+      };
+
+      $.dragScroll(); //actual function call
+
+      //Vanilla JS but it's glitchy
+      //   var curXPos = 0,
+      //     curYPos = 0,
+      //     curDown = false;
+      //   window.addEventListener("mousemove", (e) => {
+      //     e.preventDefault();
+      //     if (curDown == true) {
+      //       window.scrollTo(
+      //         document.body.scrollLeft + (curXPos - e.pageX),
+      //         document.body.scrollTop + (curYPos - e.pageY)
+      //       );
+      //     }
+      //   });
+      //   window.addEventListener("mousedown", (e) => {
+      //     e.preventDefault();
+      //     curDown = true;
+      //     curYPos = e.pageY;
+      //     curXPos = e.pageX;
+      //   });
+      //   window.addEventListener("mouseup", (e) => {
+      //     e.preventDefault();
+      //     curDown = false;
+      //   });
+    </script>
+  </body>
+</html>
