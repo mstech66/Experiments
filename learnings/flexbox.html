@@ -3,6 +3,9 @@ By default Flex will have the items in the container if it's not fitting then th
 justify-content aligns content with relative to main axis where as align-items does it relative to cross-axis
 when there are multiline containers inside flex we can align them using align-content
 flex-direction is used to set the direction for items inside flex container
+flex-basis is the initial width of the box before resizing/shrinking
+flex-shrink is the ratio about how much the item will shrink with resize relative to other elements
+flex-grow just like shrink but is about how much the item will grow with resize
 -->
 
 <!DOCTYPE html>
@@ -28,8 +31,8 @@ flex-direction is used to set the direction for items inside flex container
         align-items: center;
       }
       .container-item {
-        width: 300px;
         height: 200px;
+        flex: 0 0 250px;
         margin: 10px;
         border-radius: 10px;
         background-color: cornflowerblue;
