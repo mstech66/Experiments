@@ -1,0 +1,47 @@
+<!-- Notes:
+By default Flex will have the items in the container if it's not fitting then the items inside the container will shrink
+justify-content aligns content with relative to main axis where as align-items does it relative to cross-axis
+when there are multiline containers inside flex we can align them using align-content
+flex-direction is used to set the direction for items inside flex container
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Example</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: aquamarine;
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .container-item {
+        width: 300px;
+        height: 200px;
+        margin: 10px;
+        border-radius: 10px;
+        background-color: cornflowerblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-item"></div>
+      <div class="container-item"></div>
+      <div class="container-item"></div>
+      <div class="container-item"></div>
+    </div>
+  </body>
+</html>
