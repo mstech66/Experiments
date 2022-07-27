@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes</title>
+    <style>
+      :root {
+        /* Light Mode Theme */
+        --font-color-light: #212121;
+        --background-light: url("./images/tS5xN.png");
+
+        /* Dark Mode Theme */
+        --font-color-dark: #fafafa;
+        --background-dark: url("./images/tS5xN-dark.png");
+      }
+      @font-face {
+        font-family: "SFPro";
+        src: url("./assets/fonts/SFPRODISPLAYREGULAR.OTF");
+      }
+      /* Media Queries */
+      @media screen and (max-width: 650px) {
+        .grid-container {
+          justify-content: flex-start;
+        }
+      }
+      /* Dark Mode CSS */
+      .darkMode {
+        color: var(--font-color-dark);
+        background: var(--background-dark);
+        transition: background ease-out 700ms;
+      }
+      /* Main CSS */
+      body {
+        font-family: "SFPro";
+        color: var(--font-color-light);
+        padding: 0;
+        margin: 0;
+        background: var(--background-light);
+        transition: background ease-out 700ms;
+      }
+      .title {
+        margin: 32px;
+        font-size: 2rem;
+        font-style: normal;
+        display: inline-block;
+        user-select: none;
+      }
+      #switchBtn {
+        display: inline-block;
+        margin: 32px;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        margin: 0px 32px;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .note {
+        background-color: #f3e782;
+        height: 200px;
+        border-radius: 8px;
+        transition: all 500ms;
+        padding: 8px;
+        color: #262626 !important;
+        user-select: none;
+        overflow: hidden;
+      }
+      .note:hover {
+        box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
+      }
+      #navBar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 32px;
+      }
+      .note-title {
+        font-size: 1.5rem;
+        margin: 12px;
+      }
+      .note-content {
+        font-size: 1rem;
+        word-wrap: break-word;
+        margin: 12px;
+        white-space: pre-line;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navBar">
+      <p class="title">Notes</p>
+      <button id="switchBtn">Switch</button>
+    </nav>
+    <div class="grid-container">
+      <div class="note">
+        <p class="note-title">Welcome</p>
+        <p class="note-content">Hey there, here you can edit create and move stuff around to complete your daily tasks
+            
+            Click this note to get started
+        </p>
+      </div>
+      <div class="note"></div>
+      <!-- <div class="note"></div>
+      <div class="note"></div>
+      <div class="note"></div>
+      <div class="note"></div>
+      <div class="note"></div>
+      <div class="note"></div> -->
+    </div>
+    <script>
+      let switchBtn = document.querySelector("#switchBtn");
+      let bodyElement = document.querySelector("body");
+      switchBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        bodyElement.classList.toggle("darkMode");
+      });
+    </script>
+  </body>
+</html>
