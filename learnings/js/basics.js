@@ -80,5 +80,3 @@ let [num1, , num3, num4] = arr;
 let { name, age } = obj;
 
 console.log(num1, num3, num4, name, age)
-
-

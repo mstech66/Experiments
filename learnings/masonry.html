@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masonry/Pinterest Layout</title>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .masonry-container {
+        columns: 6 100px;
+        column-gap: 15px;
+        width: 50vw;
+      }
+      .masonry-item {
+        display: inline-block;
+        width: 100%;
+      }
+      .masonry-item img {
+        width: 100%;
+        display: block;
+      }
+      .container-item {
+        box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
+          rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+        background-color: #27292d;
+        width: 200px;
+        height: 300px;
+        border-radius: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="masonry-container">
+      <div class="masonry-item">
+        <div class="container-item"></div>
+      </div>
+
+      <div class="masonry-item">
+        <div class="container-item" style="height: 250px"></div>
+      </div>
+
+      <div class="masonry-item">
+        <div class="container-item"></div>
+      </div>
+      <div class="masonry-item">
+        <div class="container-item"></div>
+      </div>
+
+      <div class="masonry-item">
+        <div class="container-item"></div>
+      </div>
+
+      <div class="masonry-item">
+        <div class="container-item"></div>
+      </div>
+    </div>
+  </body>
+</html>
