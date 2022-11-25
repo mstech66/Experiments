@@ -41,3 +41,5 @@ newData[0].salary = "2200$";
 console.log(newData);
 
 console.log(data);
+
+
