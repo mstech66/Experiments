@@ -51,12 +51,9 @@
             var width = botSlot.clientWidth;
             var height = botSlot.clientHeight;
     
-            this.robots.every(function (robot) {
-                this.placeBot(robot, width, height);
-                return true;
-            }.bind(this));
+            this.robots.every.placeBot.bind(this, width, height);
         },
-        placeBot: function (robot, width, height) {
+        placeBot: function (width, height, robot) {
             var topOffset = this.randomInt(20, height / 3);
             var leftOffset = this.randomInt(20, width / 2);
             var botSlot = document.querySelector("#bot-slot");
@@ -82,6 +79,7 @@
             botInner.className = "robot--inner";
             bot.appendChild(botInner);
             botSlot.appendChild(bot);
+            return true;
         }
     };
 

@@ -33,3 +33,9 @@ let outsideFun = outside()(); //It will print 30 as it's looking for a in inside
 //https://dmitripavlutin.com/javascript-closures-interview-questions/
 
 //QUIZ ABOVE
+
+console.log(a);
+
+function a(){
+  console.log("Executing a function");
+}
