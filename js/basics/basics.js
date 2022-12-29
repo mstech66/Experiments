@@ -90,9 +90,9 @@ const arr = [1,2,3,4];
 const obj = {name: "Manthan", age: 24};
 
 let [num1, , num3, num4] = arr;
-let { name, age } = obj;
+let { name: newName, age } = obj;
 
-console.log(num1, num3, num4, name, age)
+console.log(num1, num3, num4, newName, age)
 
 //When to use arrow functions vs regular functions
 //Always use regular functions for object member functions
@@ -191,3 +191,82 @@ function removeNegatives(arr, callback){
 
 removeNegatives([1,2,3,4,-3,-4], x => x >= 0);
 
+//Method memoization is a technique to store results from previous expensive function exections
+
+const memoize = (func) => {
+    let cache = {};
+    return (...args) => {
+        let num = args[0];
+        if(num in cache){
+            console.log("it is in cache...using that")
+            return cache[num];
+        } else {
+            let result = func(num);
+            cache[num] = result;
+            return result;
+        }
+    }
+}
+
+const calcFactorial = memoize(
+    (x) => {
+        if(x === 0){
+            return 1;
+        } else {
+            return x * calcFactorial(x - 1);
+        }
+    }
+)
+
+console.log(calcFactorial(5)); //calculates for first time
+console.log(calcFactorial(6)); //uses 5's result from cache and calculates just for 6
+
+//Method Chaining is a mechanism where you call the method on another method for the same object
+
+function Land() {
+    this.name = "Broker's Land";
+    this.size = "2500 sqft"
+    this.status = "";
+}
+
+Land.prototype.open = function(){
+    this.status = "Open for sale"
+    return this;
+}
+
+Land.prototype.close = function(){
+    this.status = "Closed for sale"
+    return this;
+}
+
+Land.prototype.printInfo = function(){
+    console.log(this.name, this.size, this.status);
+}
+
+const newLand = new Land();
+
+newLand.open().printInfo();
+
+
+//Method Currying is where instead of passing in large number of arguments
+//you return a nested function inside of a function to split arguments from main function
+
+function calculateVolume(length){
+    return function(breadth){
+        return function(height){
+            return length * breadth * height;
+        }
+    }
+}
+
+console.log(calculateVolume(1)(2)(3));
+
+//calculated props
+
+const propName = 'c';
+
+const rank = {
+    [propName]: 3
+}
+
+console.log(rank);

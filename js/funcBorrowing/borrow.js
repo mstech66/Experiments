@@ -17,7 +17,7 @@ let newEmployee = {
 
 employee.getDetails.call(newEmployee, "Surat", "UX Designer");
 
-//Call borrows the function from employee and executes it whenever call is used
+//Call borrows the function from employee and executes it whenever call is used immediately
 
 let anotherNewEmployee = {
     firstName: "Katie",
@@ -26,7 +26,8 @@ let anotherNewEmployee = {
 
 employee.getDetails.apply(anotherNewEmployee, ["New Jersey", "Automation Engineer"]);
 
-//apply is similar to call and executes also whenever it is used but takes arguments as an array
+//apply is similar to call and executes in the next available execution cycle
+//also whenever it is used but takes arguments as an array
 
 let anotherNewNewEmployee = {
     firstName: "Delta",
