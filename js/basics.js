@@ -1,26 +1,26 @@
 //Problem with var
-console.log(myName); //we can use this variable even before it is declared
+console.log(myName); //this will give undefined as the variable is assigned as undefined when it's declared as a var
 
-var myName = "Manthan";
+var myName = "Manthan"; //this will be Manthan
 
 //var ignores the block code
 if (true) {
-  var data = "Manthan";
+  var data = "New Manthan";
 }
 
-console.log(data); //this will print the data
+console.log(data); //this will print the data as New Manthan
 
 function sayHi() {
-  greeting = "Hello";
+  greeting = "Hello"; //this will be stored in the memory context
 
-  console.log(greeting, "Manthan");
+  console.log(greeting, "Manthan"); //Hello Manthan will be printed
 
-  var greeting;
+  var greeting; //definition is later which is fine
 }
 
 sayHi();
 
-// Use let and const instead of var while declaring variables
+// Use let and const instead of var while declaring variables (Best Practice)
 let price = 20;
 const currency = "$";
 
@@ -177,7 +177,7 @@ setTimeout(newArrowStore.printStoreInfo, 1000);
 //can also use with args
 (function (x, y) {
   console.log("Here is the sum", x + y, "Tada!");
-})(1, 2);
+})(1, 2); 
 
 //Callback Function
 
@@ -283,3 +283,20 @@ newListItem.className = "listitem";
 document.getElementById("list").appendChild(newListItem);
 
 console.log(`New Length is ${liveList.length}`);
+
+//generator function
+//generator function is a function that can pause it's execution and resume it at any point of time
+
+function* generateNumbers(){
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const numberGenerator = generateNumbers()
+
+console.log(numberGenerator.next())
+console.log(numberGenerator.next())
+console.log(numberGenerator.next()) //done will be false till here as generator function is not finished
+console.log(numberGenerator.next()) //done will be true as generator function finished
+

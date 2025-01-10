@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Units</title>
+    <style>
+        html, body{
+            font-size: 50px;
+            padding: 0;
+            margin: 0;
+        }
+        .parent{
+            font-size: 100px;
+        }
+        .child{
+            width: 5em; /*this will become 500px as em takes parent font-size value so 100px * 5 = 500px */
+        }
+        .box{
+            width: 5rem; /*this will become 250px as em takes root element's font-size value so 50px * 5 = 250px */
+            border: 1px solid red;
+        }
+        .newParent{
+            border: 1px solid green;
+            background-color: beige;
+            width: 50vw; /*this will take 50% of viewport width which is the area user can see in browser*/
+            height: 50vh; /*this will take 50% of viewport height*/
+        }
+        .newChild{
+            background-color: bisque;
+            width: 50%; /*this will take 50% of parent div's width*/
+            height: 50%; /*this will take 50% of parent div's height*/
+        }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+        Hello World
+    </div>
+    <div class="parent">
+        <div class="child">
+            Manthan
+        </div>
+    </div>
+    <div class="newParent">
+        <div class="newChild">
+            Percentage
+        </div>
+    </div>
+  </body>
+</html>

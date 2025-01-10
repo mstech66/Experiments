@@ -23,12 +23,12 @@ flex-grow just like shrink but is about how much the item will grow with resize
       }
       .container {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
+        align-items: center;
         background-color: aquamarine;
         width: 100%;
-        height: auto;
+        height: 100vh;
         flex-wrap: wrap;
-        align-items: center;
       }
       .container-item {
         height: 200px;
@@ -36,6 +36,8 @@ flex-grow just like shrink but is about how much the item will grow with resize
         margin: 10px;
         border-radius: 10px;
         background-color: cornflowerblue;
+        flex-grow: 1; /*by default value is 0 but if you give 1 the container-item will grow when page is big*/
+        flex-shrink: 1; /*by default value is 0 but if you give 1 the container-item will shrink when page is small*/
       }
     </style>
   </head>
